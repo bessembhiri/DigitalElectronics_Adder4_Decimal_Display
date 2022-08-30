@@ -1,0 +1,36 @@
+DSCH 3.5
+VERSION 30/08/2022 10:09:42
+BB(50,0,90,60)
+SYM  #sup10
+BB(50,0,90,60)
+TITLE 60 -7  #
+MODEL 6000
+PROP                                                                                                                                   
+REC(55,5,30,50,r)
+VIS 5
+PIN(50,10,0.000,0.000)Z
+PIN(50,50,0.000,0.000)Z[0]
+PIN(50,40,0.000,0.000)Z[1]
+PIN(50,30,0.000,0.000)Z[2]
+PIN(50,20,0.000,0.000)Z[3]
+PIN(90,10,2.000,0.003)out1
+LIG(50,10,55,10)
+LIG(50,50,55,50)
+LIG(50,40,55,40)
+LIG(50,30,55,30)
+LIG(50,20,55,20)
+LIG(85,10,90,10)
+LIG(55,5,55,55)
+LIG(55,5,85,5)
+LIG(85,5,85,55)
+LIG(85,55,55,55)
+VLG module sup10( Z,Z[0],Z[1],Z[2],Z[3],out1);
+VLG input Z,Z[0],Z[1],Z[2],Z[3];
+VLG output out1;
+VLG wire w7,w8,;
+VLG or #(3) or3_1(out1,Z,w7,w8);
+VLG and #(2) and2_2(w7,Z[2],Z[3]);
+VLG and #(2) and2_3(w8,Z[1],Z[3]);
+VLG endmodule
+FSYM
+FFIG F:\D-windows\A_A-Freelance-2022\Deep-Learn-Keras\A-numerique-op\Mini_projet_dsch35\Sup_10\sup10.sym

@@ -1,0 +1,63 @@
+DSCH 3.5
+VERSION 30/08/2022 10:42:52
+BB(60,15,100,65)
+SYM  #sub10
+BB(60,15,100,65)
+TITLE 70 8  #
+MODEL 6000
+PROP                                                                                                                                   
+REC(65,20,30,40,r)
+VIS 5
+PIN(60,55,0.000,0.000)Z[0]
+PIN(60,45,0.000,0.000)Z[1]
+PIN(60,35,0.000,0.000)Z[2]
+PIN(60,25,0.000,0.000)Z[3]
+PIN(100,25,2.000,0.003)ZM[3]
+PIN(100,35,2.000,0.003)ZM[2]
+PIN(100,45,2.000,0.003)ZM[1]
+PIN(100,55,2.000,0.003)ZM[0]
+LIG(60,55,65,55)
+LIG(60,45,65,45)
+LIG(60,35,65,35)
+LIG(60,25,65,25)
+LIG(95,25,100,25)
+LIG(95,35,100,35)
+LIG(95,45,100,45)
+LIG(95,55,100,55)
+LIG(65,20,65,60)
+LIG(65,20,95,20)
+LIG(95,20,95,60)
+LIG(95,60,65,60)
+VLG module sub10( Z[0],Z[1],Z[2],Z[3],ZM[3],ZM[2],ZM[1],ZM[0]);
+VLG input Z[0],Z[1],Z[2],Z[3];
+VLG output ZM[3],ZM[2],ZM[1],ZM[0];
+VLG wire w10,w11,w12,w13,w14,w15,w16,w17;
+VLG wire w18,w19,w20,w21,w22,w23,w24,w25;
+VLG wire w26,w27,w28,w29;
+VLG nand #(1) nand2_1_1(w14,Z[3],vss);
+VLG nand #(1) nand2_2_2(w15,Z[3],w10);
+VLG nand #(1) nand2_3_3(w16,vss,w10);
+VLG nand #(1) nand3_4_4(w11,w16,w15,w14);
+VLG xor #(1) xor2_5_5(ZM[3],w17,Z[3]);
+VLG xor #(1) xor2_6_6(w17,w10,vss);
+VLG nand #(1) nand2_1_7(w18,Z[2],vdd);
+VLG nand #(1) nand2_2_8(w19,Z[2],w12);
+VLG nand #(1) nand2_3_9(w20,vdd,w12);
+VLG nand #(2) nand3_4_10(w10,w20,w19,w18);
+VLG xor #(1) xor2_5_11(ZM[2],w21,Z[2]);
+VLG xor #(1) xor2_6_12(w21,w12,vdd);
+VLG nand #(1) nand2_1_13(w22,Z[1],vss);
+VLG nand #(1) nand2_2_14(w23,Z[1],w13);
+VLG nand #(1) nand2_3_15(w24,vss,w13);
+VLG nand #(2) nand3_4_16(w12,w24,w23,w22);
+VLG xor #(1) xor2_5_17(ZM[1],w25,Z[1]);
+VLG xor #(1) xor2_6_18(w25,w13,vss);
+VLG nand #(1) nand2_1_19(w26,Z[0],vdd);
+VLG nand #(1) nand2_2_20(w27,Z[0],vdd);
+VLG nand #(1) nand2_3_21(w28,vdd,vdd);
+VLG nand #(2) nand3_4_22(w13,w28,w27,w26);
+VLG xor #(1) xor2_5_23(ZM[0],w29,Z[0]);
+VLG xor #(1) xor2_6_24(w29,vdd,vdd);
+VLG endmodule
+FSYM
+FFIG F:\D-windows\A_A-Freelance-2022\Deep-Learn-Keras\A-numerique-op\Mini_projet_dsch35\Sub_10\sub10.sym

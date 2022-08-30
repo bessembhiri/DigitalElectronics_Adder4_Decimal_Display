@@ -1,0 +1,27 @@
+USER SYMBOL by DSCH 3.5
+DATE 30/08/2022 09:19:37
+SYM  #halfadder
+BB(0,0,40,30)
+TITLE 10 -7  #
+MODEL 6000
+REC(5,5,30,20)
+PIN(0,20,0.00,0.00)B
+PIN(0,10,0.00,0.00)A
+PIN(40,20,2.00,1.00)Carry
+PIN(40,10,2.00,1.00)SUM
+LIG(0,20,5,20)
+LIG(0,10,5,10)
+LIG(35,20,40,20)
+LIG(35,10,40,10)
+LIG(5,5,5,25)
+LIG(5,5,35,5)
+LIG(35,5,35,25)
+LIG(35,25,5,25)
+VLG module halfadder( B,A,Carry,SUM);
+VLG  input B,A;
+VLG  output Carry,SUM;
+VLG  wire ;
+VLG  xor #(2) xor2_1(SUM,A,B);
+VLG  and #(2) and2_2(Carry,B,A);
+VLG endmodule
+FSYM
